@@ -1,3 +1,7 @@
+# 
+docker-compose up
+go to localhost:3003
+
 # Rails AJAX Examples
 
 Rails ships with [turbolinks](https://github.com/turbolinks/turbolinks) which:
