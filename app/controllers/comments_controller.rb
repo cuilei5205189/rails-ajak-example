@@ -29,8 +29,15 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        @comment.destroy
-        redirect_to @comment.post, notice: "Comment successfully deleted."
+        respond_to do |format|
+            if @comment.destroy
+                format.html { redirect_to @comment.post, notice: 'Comment was successfully destroyed.' }
+                format.js
+            else
+                format.html { render action: "edit" }
+                format.js
+            end
+        end
     end
 
     private
